@@ -1,0 +1,177 @@
+/*
+  color: darken([color],[porcentaje])
+  p{
+      color: darken($text-color, 50%);
+  }
+*/
+/*
+  color: lighten([color],[porcentaje])
+  p{
+      color: lighten($text-color, 50%);
+  }
+*/
+/*
+  p{  
+      @include defaultFont([Se pueden incluir variables o dejar vacio]);
+
+      @include defaultFont($fz: 16px, $fw: medium, $lh: 18px, $ta: center);
+
+      $fz: -> [Property] -> font-size
+      $fw: -> [Property] -> font-weight
+      $lh: -> [Property] -> line-height
+      $ta: -> [Property] -> text-align
+      $c:  -> [Property] -> color
+  }
+*/
+@font-face {
+  font-family: "PlexSans-thing";
+  src: url("../fonts/IBMPlexSans-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-thing-italic";
+  src: url("../fonts/IBMPlexSans-ThinItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-extraLight";
+  src: url("../fonts/IBMPlexSans-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-extraLight-italic";
+  src: url("../fonts/IBMPlexSans-ExtraLightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-light";
+  src: url("../fonts/IBMPlexSans-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-light-italic";
+  src: url("../fonts/IBMPlexSans-LightItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-regular";
+  src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-regular-italic";
+  src: url("../fonts/IBMPlexSans-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-medium";
+  src: url("../fonts/IBMPlexSans-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-medium-italic";
+  src: url("../fonts/IBMPlexSans-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-semiBold";
+  src: url("../fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-semiBold-italic";
+  src: url("../fonts/IBMPlexSans-SemiBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-bold";
+  src: url("../fonts/IBMPlexSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PlexSans-bold-Italic";
+  src: url("../fonts/IBMPlexSans-BoldItalic.ttf") format("truetype");
+}
+/* Main Styles - Generic Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+  border-width: 0;
+  vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+body {
+  font-family: "PlexSans-regular", sans-serif;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+}
+
+textarea,
+input:matches([type=email],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=url]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+}
+
+span {
+  font-size: 1em;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+:root {
+  --height-header: 70px;
+  --height-footer: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: var(--height-header);
+  background-color: #1a1c22;
+}
+
+.mainNav {
+  align-self: flex-end;
+  height: fit-content;
+  display: block;
+  padding: 10px;
+}
+
+.mainContainer {
+  height: calc(100vh - var(--height-header) - var(--height-footer));
+}
+
+.mainMenu {
+  display: flex;
+}
+.mainMenu__item {
+  font-family: "PlexSans-medium", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+  color: #22c49f;
+  margin-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.mainMenu__item:hover {
+  background-color: #313338;
+}
+
+/*# sourceMappingURL=style.css.map */

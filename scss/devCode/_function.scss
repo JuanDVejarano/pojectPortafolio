@@ -1,0 +1,41 @@
+  
+//Funcion parar encontrar caracteres de un string
+@function ends-with($string, $find) {
+  @if (str-index($string, $find) == (str-length($string) - str-length($find) + 1)) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+//============ Darken ============
+@function darken($color, $percentage) {
+    @return mix(black, $color, $percentage);
+  }
+  
+  //Hoe to use darken
+  /*
+    color: darken([color],[porcentaje])
+    p{
+        color: darken($text-color, 50%);
+    }
+  */
+  
+  //============ End darken ============
+  
+  
+  
+  //============ Lighten ============
+  @function lighten($color, $percentage) {
+    @return mix(white, $color, $percentage);
+  }
+  
+  //How to use lighten
+  /*
+    color: lighten([color],[porcentaje])
+    p{
+        color: lighten($text-color, 50%);
+    }
+  */
+  
+  //============ End Lighten ============

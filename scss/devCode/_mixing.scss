@@ -1,0 +1,73 @@
+//============ Defaut Fonts Properties ============
+
+//How to use defaultFont
+/*
+  p{  
+      @include defaultFont([Se pueden incluir variables o dejar vacio]);
+
+      @include defaultFont($fz: 16px, $fw: medium, $lh: 18px, $ta: center);
+
+      $fz: -> [Property] -> font-size
+      $fw: -> [Property] -> font-weight
+      $lh: -> [Property] -> line-height
+      $ta: -> [Property] -> text-align
+      $c:  -> [Property] -> color
+  }
+*/
+
+
+// la hacer modificaciones tener en cuenta _properties.scss
+@mixin defaultFont($ff: $PlexRegular, $fz: $font-texto, $fw: regular, $lh: 'LhInitial', $ta: left, $c: $fontColor, $fs: normal){
+
+    $FzContent: inspect($fz);
+    @if ends-with($FzContent, 'px') {
+      @if $lh == 'LhInitial'{
+        $lh: $fz + 2;
+      }
+    } @else{
+      @if $lh == "LhInitial"{
+        $lh: initial;
+      }
+    }
+  
+    @if map-has-key($mapFW, $fw) {
+      $fw: map-get($mapFW, $fw)
+    }
+
+    @if $fw == 100{
+        $ff: $ff + '-thing'
+    } @else if $fw == 200 {
+        $ff: $ff + '-extraLight'
+    } @else if $fw == 300 {
+        $ff: $ff + '-light'
+    } @else if $fw == 400 {
+        $ff: $ff + '-regular'
+    } @else if $fw == 500 {
+        $ff: $ff + '-medium'
+    } @else if $fw == 600 {
+        $ff: $ff + '-semiBold'
+    } @else if $fw == 700 {
+        $ff: $ff + '-bold'
+    }
+
+    @if $fs == normal{
+        
+    } @else if $fs == italic{
+        $ff: $ff + '-italic'
+    }
+
+
+    $ff: $ff, sans-serif;
+    
+    //Normal properties
+    font-family: $ff;
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+    font-style: $fs;
+    text-align: $ta;
+    color: $c;
+
+}
+
+//============ End Defaut Fonts Properties ============
