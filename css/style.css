@@ -134,11 +134,10 @@ ol, ul {
 
 :root {
   --height-header: 70px;
-  --height-footer: 20px;
+  --height-footer: 0px;
 }
 
 .header {
-  display: flex;
   justify-content: space-between;
   height: var(--height-header);
   background-color: #1a1c22;
@@ -155,23 +154,199 @@ ol, ul {
   height: calc(100vh - var(--height-header) - var(--height-footer));
 }
 
-.mainMenu {
-  display: flex;
+.leftNav {
+  width: 250px;
+  background-color: #242731;
 }
+
+.content {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box, .box--first {
+  width: 100%;
+  flex-shrink: 0;
+  transition: transform 1s ease;
+  order: 3;
+  background-color: #3c3c40;
+  overflow-y: scroll;
+}
+.box--animation {
+  order: 2;
+  transform: translate(-100%, 0px);
+  z-index: 999;
+}
+.box--first {
+  order: 1;
+}
+
+.card {
+  width: 80%;
+  background-color: #3c3c40;
+  border-radius: 10px;
+  margin: 20px auto;
+  height: 1000px;
+}
+.card__page {
+  position: relative;
+  height: auto;
+  width: 15px;
+  background-color: #22c49f;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.card__page::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #22c49f;
+}
+
+.cardContent {
+  padding: 20px;
+  padding-left: 35px;
+  width: calc(100%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 10px;
+}
+
 .mainMenu__item {
+  position: relative;
   font-family: "PlexSans-medium", sans-serif;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 20px;
   font-weight: 500;
   font-style: normal;
   text-align: left;
-  color: #22c49f;
+  color: #ededed;
   margin-right: 10px;
   padding: 10px;
   cursor: pointer;
 }
 .mainMenu__item:hover {
   background-color: #313338;
+}
+
+.leftMenu {
+  font-family: "PlexSans-regular", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  color: #ededed;
+  margin: 10px auto;
+}
+.leftMenu__item {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "PlexSans-regular", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  color: #ededed;
+}
+
+.mainTitle {
+  position: relative;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: inset 10px -10px 20px #353538, inset -10px 10px 20px #434348;
+}
+.mainTitle__h {
+  font-family: "PlexSans-bold", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: #ededed;
+}
+
+.sectionTitle {
+  position: relative;
+  margin-bottom: 10px;
+}
+.sectionTitle__h {
+  font-family: "PlexSans-semiBold", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-align: left;
+  color: #ededed;
+}
+
+.subnTitle {
+  position: relative;
+  margin-bottom: 10px;
+}
+.subnTitle__h {
+  font-family: "PlexSans-medium", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+  color: #ededed;
+}
+
+.articleBlock {
+  margin: 0px;
+}
+
+.paragraph {
+  font-family: "PlexSans-regular", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  color: #ededed;
+}
+
+hr {
+  height: 2px;
+  border-radius: 12px;
+  background-color: #ededed;
+  margin-bottom: 20px;
+}
+
+.card {
+  box-shadow: 7px 7px 14px #303033, -7px -7px 14px #48484d;
+}
+
+.header, .mainContainer, .content, .card, .mainMenu, .mainTitle, .sectionTitle, .subnTitle {
+  display: flex;
+}
+
+.leftNav, .cardContent, .leftMenu {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */

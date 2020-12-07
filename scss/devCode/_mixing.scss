@@ -22,7 +22,7 @@
     $FzContent: inspect($fz);
     @if ends-with($FzContent, 'px') {
       @if $lh == 'LhInitial'{
-        $lh: $fz + 2;
+        $lh: $fz + 4;
       }
     } @else{
       @if $lh == "LhInitial"{

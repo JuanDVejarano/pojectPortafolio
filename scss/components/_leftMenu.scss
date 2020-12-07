@@ -1,0 +1,8 @@
+.leftMenu{
+    @include defaultFont();
+    @extend %flexBoxColumn;
+    margin: 10px auto;
+    &__item{
+        text-align: left;
+    }
+}

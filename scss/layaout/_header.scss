@@ -1,5 +1,5 @@
 .header{
-    display: flex;
+    @extend %flexBox;
     justify-content: space-between;
     height: var(--height-header);
     background-color: $bgStrong;

@@ -1,0 +1,5 @@
+.leftNav{
+    @extend %flexBoxColumn;
+    width: 250px;
+    background-color: $bgMedium;
+}

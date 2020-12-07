@@ -1,3 +1,4 @@
 .mainContainer{
+    @extend %flexBox;
     height: calc(100vh - var(--height-header) - var(--height-footer));
 }

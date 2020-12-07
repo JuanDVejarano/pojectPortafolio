@@ -1,0 +1,7 @@
+.articleBlock{
+    margin: 0px;
+}
+
+.paragraph{
+    @include defaultFont();
+}

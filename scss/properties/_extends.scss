@@ -1,0 +1,13 @@
+%neoMorfismo{
+    box-shadow:  7px 7px 14px #303033, 
+             -7px -7px 14px #48484d;
+}
+
+%flexBox{
+    display: flex;
+}
+
+%flexBoxColumn{
+    display: flex;
+    flex-direction: column;
+}
