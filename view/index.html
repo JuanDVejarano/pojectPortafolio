@@ -12,10 +12,10 @@
         <nav class="mainNav">
             <img src="" alt="">
             <ul class="mainMenu">
-                <li id="navPortafolio" class="mainMenu__item">Portafolio</li>
-                <li id="nav" class="mainMenu__item">PreWork</li>
-                <li id="nav" class="mainMenu__item">HTML</li>
-                <li id="nav" class="mainMenu__item">CSS</li>
+                <li id="navPortafolio" class="mainMenu__item" onclick="menuChange('Portafolio')">Portafolio</li>
+                <li id="navPreWork" class="mainMenu__item" onclick="menuChange('PreWork')">PreWork</li>
+                <li id="nav" class="mainMenu__item" onclick="menuChange('HTML')">HTML</li>
+                <li id="nav" class="mainMenu__item" onclick="menuChange('CSS')">CSS</li>
                 <li id="nav" class="mainMenu__item">PreProcesadores</li>
                 <li id="nav" class="mainMenu__item">JS</li>
                 <li id="nav" class="mainMenu__item">Base de datos</li>
@@ -26,7 +26,7 @@
         </nav>
     </header>
     <main class="mainContainer">
-        <nav class="leftNav">
+        <nav class="leftNav" id="idLeftNav">
             <ul class="leftMenu">
                 <li class="leftMenu__item">introduccion</li>
                 <li class="leftMenu__item">etiquetas</li> 
@@ -35,17 +35,27 @@
         </nav>
         
         <section class="content">
-            <div class="box" id="divPortafolio">
-                <div>
-                    <h2>Intoduccion Portafolio</h2>
-                    <hr>
+
+            <!-- #region Portafolio-->
+            <div class="box box--first" id="divPortafolio">
+                <div class="card">
+                    <div class="card__page--a"></div>
+                    <div class="cardContent">
+                        <div class="mainTitle">
+                            <h2 class="mainTitle__h">Portafolio</h2>
+                        </div>
+
+                    </div>
+                    
                 </div>
 
             </div>
-            <!-- #region preWork-->
-            <div class="box--first" id="div">
+            <!-- #endregion Portafolio-->
+
+            <!-- #region PreWork-->
+            <div class="box" id="divPreWork">
                 <div class="card">
-                    <div class="card__page"></div>
+                    <div class="card__page--b"></div>
                     <div class="cardContent">
                         <div class="mainTitle">
                             <h2 class="mainTitle__h">PreWork</h2>
@@ -80,20 +90,35 @@
                 </div>
 
             </div>
-            <!-- #endregion preWork-->
-            <div class="box" id="div">
-                <div>
-                    <h2>Intoduccion Html</h2>
-                    <hr>
-                </div>
-            </div>
+            <!-- #endregion PreWork-->
 
-            <div class="box" id="div">
-                <div>
-                    <h2>Intoduccion Html</h2>
-                    <hr>
+            <!-- #region  HTML-->
+            <div class="box" id="divHTML">
+                <div class="card">
+                    <div class="card__page--c"></div>
+                    <div class="cardContent">
+                        <div class="mainTitle">
+                            <h2 class="mainTitle__h">HTML</h2>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+            <!-- #endregion HTML-->
+
+            <!-- #region CSS-->
+            <div class="box" id="divCSS">
+                <div class="card">
+                    <div class="card__page--d"></div>
+                    <div class="cardContent">
+                        <div class="mainTitle">
+                            <h2 class="mainTitle__h">CSS</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- #endregion CSS-->
 
             <div class="box" id="div">
                 <div>
@@ -149,5 +174,9 @@
     <footer>
 
     </footer>
+
+    <!-- #region call script-->
+    <script src="../js/menu.js"></script>
+    <!-- #endregion call script-->
 </body>
 </html>

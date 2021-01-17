@@ -1,11 +1,11 @@
 .box{
     width: 100%;
     flex-shrink: 0;
-    transition: transform 1s ease;
     order: 3;
     background-color: $bgFaint;
     overflow-y: scroll;
     &--animation{
+        transition: transform 1s ease;
         order: 2;
         transform: translate(-100%, 0px);
         z-index: 999;
@@ -39,6 +39,30 @@
             width: 40px;
             height: 40px;
             background-color: $primaryColor;
+        }
+        &--a{
+            @extend .card__page;
+        }
+        &--b{
+            @extend .card__page;
+            background-color: $tetradicColor2;
+            &::before{
+                background-color: $tetradicColor2;
+            }
+        }
+        &--c{
+            @extend .card__page;
+            background-color: $tetradicColor3;
+            &::before{
+                background-color: $tetradicColor3;
+            }
+        }
+        &--d{
+            @extend .card__page;
+            background-color: $tetradicColor4;
+            &::before{
+                background-color: $tetradicColor4;
+            }
         }
     }
 }

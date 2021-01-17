@@ -3,5 +3,5 @@
 }
 
 .paragraph{
-    @include defaultFont();
+    @include defaultFont(1);
 }

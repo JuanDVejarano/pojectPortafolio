@@ -15,25 +15,93 @@
   }
 */
 
-
+// el mapa de fw esta creado en _variables.scss
 // la hacer modificaciones tener en cuenta _properties.scss
-@mixin defaultFont($ff: $PlexRegular, $fz: $font-texto, $fw: regular, $lh: 'LhInitial', $ta: left, $c: $fontColor, $fs: normal){
+@mixin defaultFont($d, $ff: 'init', $fz: 'init', $fw: 'init', $lh: 'init', $ta: 'init', $c: 'init', $fs: 'init'){
 
-    $FzContent: inspect($fz);
-    @if ends-with($FzContent, 'px') {
-      @if $lh == 'LhInitial'{
-        $lh: $fz + 4;
-      }
-    } @else{
-      @if $lh == "LhInitial"{
-        $lh: initial;
-      }
+  @if $d == 1 {
+    @include allProperty($ff, $fz, $fw, $lh, $ta, $c, $fs);
+  } @else {
+    @include partiallyProperty($ff, $fz, $fw, $lh, $ta, $c, $fs);
+  }
+
+}
+
+// Mixin para agregar todas las propiedades de las fuentes
+@mixin allProperty($ff, $fz, $fw, $lh, $ta, $c, $fs){
+  @if $ff == 'init' {$ff: $PlexRegular}
+  @if $fz == 'init' {$fz: $font-texto}
+  @if $fw == 'init' {$fw: regular}
+  @if $ta == 'init' {$ta: left}
+  @if $c == 'init' {$c: $fontColor}
+  @if $fs == 'init' {$fs: normal}
+
+  $FzContent: inspect($fz);
+  @if ends-with($FzContent, 'px') {
+    @if $lh == 'init'{
+      $lh: $fz + 2;
     }
+  } @else{
+    @if $lh == "init"{
+      $lh: initial;
+    }
+  }
+
+  @if map-has-key($mapFW, $fw) {
+    $fw: map-get($mapFW, $fw)
+  }
+
+  @if $fw == 100{
+      $ff: $ff + '-thing'
+  } @else if $fw == 200 {
+      $ff: $ff + '-extraLight'
+  } @else if $fw == 300 {
+      $ff: $ff + '-light'
+  } @else if $fw == 400 {
+      $ff: $ff + '-regular'
+  } @else if $fw == 500 {
+      $ff: $ff + '-medium'
+  } @else if $fw == 600 {
+      $ff: $ff + '-semiBold'
+  } @else if $fw == 700 {
+      $ff: $ff + '-bold'
+  }
+
+  @if $fs == normal{
+      
+  } @else if $fs == italic{
+      $ff: $ff + '-italic'
+  }
+
+
+  $ff: $ff, sans-serif;
   
-    @if map-has-key($mapFW, $fw) {
-      $fw: map-get($mapFW, $fw)
-    }
+  //Normal properties
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  text-align: $ta;
+  font-style: $fs;
+  color: $c;
 
+}
+
+// Mixin para agregar propiedades ralativas a las fuentes
+@mixin partiallyProperty($ff, $fz, $fw, $lh, $ta, $c, $fs){
+  @if map-has-key($mapFW, $fw) {
+    $fw: map-get($mapFW, $fw)
+  }
+  
+  @if $ff != 'init' {font-family: $ff}
+  @if $fz != 'init' {font-size: $fz}
+  @if $lh != 'init' {line-height: $lh}
+  @if $ta != 'init' {text-align: $ta}
+  @if $c != 'init' {color: $fontColor}
+  @if $fs != 'init' {font-style: $fs}
+
+  @if $fw != 'init' {
+    font-weight: $fw;
     @if $fw == 100{
         $ff: $ff + '-thing'
     } @else if $fw == 200 {
@@ -51,23 +119,18 @@
     }
 
     @if $fs == normal{
-        
+
     } @else if $fs == italic{
         $ff: $ff + '-italic'
     }
 
 
     $ff: $ff, sans-serif;
-    
-    //Normal properties
+
     font-family: $ff;
-    font-size: $fz;
-    line-height: $lh;
-    font-weight: $fw;
-    font-style: $fs;
-    text-align: $ta;
-    color: $c;
+  }
 
 }
+
 
 //============ End Defaut Fonts Properties ============

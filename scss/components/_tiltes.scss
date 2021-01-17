@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5{
-    @include defaultFont();
+    @include defaultFont(1);
 }
 
 .mainTitle{
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5{
     border-radius: 15px;
     box-shadow: inset 10px -10px 20px #353538, inset -10px 10px 20px #434348;
     &__h{
-        @include defaultFont($fz: $font-titulo + 4, $ta: center, $fw: bold);
+        @include defaultFont(1, $fz: $font-titulo + 4, $ta: center, $fw: bold);
     }
 }
 
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5{
     @extend %flexBox;
     margin-bottom: 10px;
     &__h{
-        @include defaultFont($fz: $font-titulo, $fw: semi-bold);
+        @include defaultFont(1, $fz: $font-titulo, $fw: semi-bold);
     }
 }
 
@@ -29,6 +29,6 @@ h1, h2, h3, h4, h5{
     @extend %flexBox;
     margin-bottom: 10px;
     &__h{
-        @include defaultFont($fz: $font-titulo - 2, $fw: medium);
+        @include defaultFont(1, $fz: $font-titulo - 2, $fw: medium);
     }
 }
