@@ -14,34 +14,34 @@ const menuChange = elemento => {
         switch (elemento){
             case 'Portafolio':
                 submenu = [ 
-                    {name: 'Por-item1'}, 
-                    {name: 'Por-item2'}, 
-                    {name: 'Por-item3'}
+                    {name: 'Por-item1', direccion: ''}, 
+                    {name: 'Por-item2', direccion: ''}, 
+                    {name: 'Por-item3', direccion: ''}
                 ]
                 break;
             case  'PreWork':
                 submenu = [ 
-                    {name: 'Pre-item1'}, 
-                    {name: 'Pre-item2'}, 
-                    {name: 'Pre-item3'}, 
-                    {name: 'Pre-item4'}
+                    {name: 'Editor de Texto', direccion: 'idEditorTexto'}, 
+                    {name: 'Consola', direccion: 'idConsola'}, 
+                    {name: 'Pre-item3', direccion: ''}, 
+                    {name: 'Pre-item4', direccion: ''}
                 ]
                 break;
             case  'HTML':
-            submenu = [ 
-                {name: 'HTML-item1'}, 
-                {name: 'HTML-item2'}, 
-                {name: 'HTML-item3'}
-            ]
-            break;
+                submenu = [ 
+                    {name: 'HTML-item1', direccion: ''}, 
+                    {name: 'HTML-item2', direccion: ''}, 
+                    {name: 'HTML-item3', direccion: ''}
+                ]
+                break;
             case  'CSS':
-            submenu = [ 
-                {name: 'CSS-item1'}, 
-                {name: 'CSS-item2'}, 
-                {name: 'CSS-item3'}, 
-                {name: 'CSS-item4'}
-            ]
-            break;
+                submenu = [ 
+                    {name: 'CSS-item1', direccion: ''}, 
+                    {name: 'CSS-item2', direccion: ''}, 
+                    {name: 'CSS-item3', direccion: ''}, 
+                    {name: 'CSS-item4', direccion: ''}
+                ]
+                break;
         }
         crearSubMenu(submenu);
 
@@ -78,10 +78,16 @@ const crearSubMenu = submenu =>{
 
     //crea los nuevos nodos para el submenu
     for (let i = 0; i < submenu.length; i++) {
-        let newElement = document.createElement("li");
-        newElement.setAttribute("class", "leftMenu__item");
-        newElement.innerHTML = submenu[i].name;
-        menu.appendChild(newElement);
+        let newItem = document.createElement("li");
+        newItem.setAttribute("class", "leftMenu__item");
+        newItem.setAttribute("id", `itemSubM${i}`);
+        menu.appendChild(newItem);
+
+        let itemLink = document.createElement("a");
+        itemLink.setAttribute("href", `#${submenu[i].direccion}`);
+        itemLink.setAttribute("class", `itemSubM${i}`);
+        itemLink.innerHTML = submenu[i].name;
+        document.getElementById(`itemSubM${i}`).appendChild(itemLink);
     }
 }
 //#endregion Funciones

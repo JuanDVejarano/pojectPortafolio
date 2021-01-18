@@ -24,11 +24,19 @@ h1, h2, h3, h4, h5{
     }
 }
 
-.subnTitle{
+.subTitle{
     position: relative;
     @extend %flexBox;
     margin-bottom: 10px;
     &__h{
         @include defaultFont(1, $fz: $font-titulo - 2, $fw: medium);
+    }
+}
+
+.titleExtra{
+    position: relative;
+    margin-bottom: 15px;
+    &__h{
+        @include defaultFont(1, $fz: $font-titulo - 4, $fw: medium, $ta: center);
     }
 }

@@ -4,5 +4,9 @@
     margin: 10px auto;
     &__item{
         text-align: left;
+        a{
+            @include defaultFont(1);
+            text-decoration: none;
+        }
     }
 }

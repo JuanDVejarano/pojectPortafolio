@@ -1,0 +1,75 @@
+.containerExtras{
+    @extend %flexBox;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.boxExtra{
+    width: 100%;
+    max-width: 300px;
+    background-color: $bgExtra;
+    margin: 0 5px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    -webkit-box-shadow: 3px 2px 18px -6px rgba(20,20,20,0.5);
+    -moz-box-shadow: 3px 2px 18px -6px rgba(20,20,20,0.5);
+    box-shadow: 3px 2px 18px -6px rgba(20,20,20,0.5);
+    transition: ease 0.3s all;
+    .figExtra{
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        height: 150px;
+        &__img{
+            width: 100%;
+            /* height: 152px; */
+            margin: auto;
+            min-width: 50%;
+            position: absolute;
+            top: 0;
+            left: -50%;
+            right: -50%;
+            bottom: 0;
+        }
+    }
+    .bodyExtra{
+        @extend %flexBox;
+        position: relative;
+        height: 80px;
+        justify-content: center;
+        
+        .textoExtra{
+            @extend %flexBoxColumn;
+            border-radius: 6px;
+            background-color: #ededed;
+            width: 85%;
+            position: absolute;
+            padding: 10px; padding-top: 15px;
+            margin-top: -70px;
+            //height: 105px;
+            max-height: 143px;
+            &__h{
+                @include defaultFont(1, $c: $fontColorDark, $ta: center, $fw: medium);
+                margin-bottom: 10px;
+            }
+            &__p{
+                @include defaultFont(1, $fz: $font-texto - 2, $c: $fontColorDark);
+                margin-bottom: 10px;
+            }
+            &__link{
+                position: relative;
+                margin: auto;
+                padding: 5px 10px;
+                margin: auto;
+                border-radius: 20px;
+                @include defaultFont(1, $fz: $font-texto - 2, $c: #4E22C4);
+                border: 1px solid #4E22C4;
+                text-decoration: none;
+            }
+        }
+    }
+    &:hover{
+        transform: scale(1.02);
+    }
+}

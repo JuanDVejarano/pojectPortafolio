@@ -9,6 +9,7 @@
 <body>
     <header class="header">
         <img src="" alt="">
+        <!-- #region menu Principal-->
         <nav class="mainNav">
             <img src="" alt="">
             <ul class="mainMenu">
@@ -24,27 +25,29 @@
                 <li id="nav" class="mainMenu__item">Angular</li>
             </ul>
         </nav>
+        <!-- #endregion menu Principal-->
     </header>
-    <main class="mainContainer">
+    <div class="mainContainer">
+        <!-- #region SubMenu-->
         <nav class="leftNav" id="idLeftNav">
             <ul class="leftMenu">
-                <li class="leftMenu__item">introduccion</li>
-                <li class="leftMenu__item">etiquetas</li> 
+                <li class="leftMenu__item"><a href="#idEditorTexto">Editor de Texto</a></li>
+                <li class="leftMenu__item" id="itemSubM1"><a href="#idConsola" class="itemSubM1">Consola</a></li>
                 <li class="leftMenu__item">buenas practicas</li>
             </ul>
         </nav>
+        <!-- #endregion SubMenu-->
         
-        <section class="content">
+        <main class="content">
 
             <!-- #region Portafolio-->
-            <div class="box box--first" id="divPortafolio">
+            <div class="box" id="divPortafolio">
                 <div class="card">
                     <div class="card__page--a"></div>
                     <div class="cardContent">
                         <div class="mainTitle">
                             <h2 class="mainTitle__h">Portafolio</h2>
                         </div>
-
                     </div>
                     
                 </div>
@@ -53,47 +56,243 @@
             <!-- #endregion Portafolio-->
 
             <!-- #region PreWork-->
-            <div class="box" id="divPreWork">
+            <section class="box box--first" id="divPreWork">
                 <div class="card">
                     <div class="card__page--b"></div>
                     <div class="cardContent">
                         <div class="mainTitle">
                             <h2 class="mainTitle__h">PreWork</h2>
                         </div>
-    
-                        <div class="sectionTitle">
-                            <h3 class="sectionTitle__h">Editor de texto</h3>
-                        </div>
-                        <hr>
-
-                        <div class="articleBlock">
-
-                            <div class="subnTitle">
-                                <img src="" alt="">
-                                <h4 class="subnTitle__h">Visual Code</h4>
+     
+                        <!-- #region Editor de texto-->
+                        <article class="subSeccion" id="idEditorTexto">
+                            <div class="sectionTitle">
+                                <h3 class="sectionTitle__h">Editor de texto</h3>
                             </div>
-
-                            <p class="paragraph">
-                                Es una de las herramientas mas utilizada por los desarrolladores ya que es gratuita y tiene muchos plugins
-                                que son muy apreciados por los desarrolladores ya que permiten un optimo manejo del codigo y es muy versatil
-                                a la hora de desarrolar en muchso de los lenguajes que existen actualmente.
-                            </p>
+                            <hr>
     
-                            <div>
+                            <div class="articleBlock">
+    
+                                <div class="subTitle">
+                                    <img src="" alt="">
+                                    <h4 class="subTitle__h">Visual Code</h4>
+                                </div>
+    
+                                <p class="paragraph">
+                                    Es una de las herramientas mas utilizada por los desarrolladores ya que es gratuita y tiene muchos plugins
+                                    que son muy apreciados por la comunidad ya que permiten un optimo manejo del codigo y es muy versatil
+                                    a la hora de desarrollar en muchos de los lenguajes que existen actualmente.
+                                </p>
+    
                                 
-                            </div>
+                                <!-- #region Extras-->
+                                <div class="titleExtra">
+                                    <h4 class="titleExtra__h">Extenciones Recomendadas</h4>
+                                </div>
     
-                        </div>
+                                <div class="containerExtras">
+                                    <!--Live Server-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/live-server.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Live Server</h5>
+                                                <p class="textoExtra__p">Nos crea un servidor host para ejecutar el proyecto en tiempo real</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a>
+                                            </div>
+                                        </div>
+                                    </article>
+    
+                                    <!--Live Sass Compiler-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/live-sass-compiler.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Live Sass Compiler</h5>
+                                                <p class="textoExtra__p">Compila el codigo sass y podemos darle espesificaciones para su manejo</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass" target="_blank">Live Sass</a>
+                                            </div>
+                                        </div>
+                                    </article>
+    
+                                    <!--Auto Close Tag-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/auto-close-tag.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Auto Close Tag</h5>
+                                                <p class="textoExtra__p">Ayuda a cerrar etiquetas en el html de manera automatica</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" target="_blank">Auto Close Tag</a>
+                                            </div>
+                                        </div>
+                                    </article>
+    
+                                    <!--Bracket Pair Colorizer-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/bracket-pair-colorizer.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Bracket Pair Colorizer</h5>
+                                                <p class="textoExtra__p">Ayuda a identificar de mejor manera donde cierran las centencias</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2" target="_blank">Bracket Pair Colorizer</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    
+                                    <!--Remote - WSL-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/remote-WSL.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Remote - WSL</h5>
+                                                <p class="textoExtra__p">Extencion nesesaria si vamos a usar el windows subsystem for linux</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl" target="_blank">Remote - WSL</a>
+                                            </div>
+                                        </div>
+                                    </article>
+    
+                                    <!--sass-->
+                                    <article class="boxExtra">
+                                        <figure class="figExtra">
+                                            <img class="figExtra__img" src="../recursos/img/preWork/sass.jpg" alt="imagen del icono live server">
+                                        </figure>
+                                        <div class="bodyExtra">
+                                            <div class="textoExtra">
+                                                <h5 class="textoExtra__h">Sass</h5>
+                                                <p class="textoExtra__p">corrige sitaxis de sass, y autocompleta fragmentos de codigo</p>
+                                                <a class="textoExtra__link" href="https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented" target="_blank">Sass</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- #endregion Extras-->
+        
+                            </div>
+                        </article>
+                        
+                        <!-- #endregion Editor de texto-->
 
+                        <!-- #region Consola-->
+                        <article  class="subSeccion" id="idConsola">
+                            <div class="sectionTitle">
+                                <h3 class="sectionTitle__h">Consola o Terminal</h3>
+                            </div>
+                            <hr>
+                            <div class="articleBlock">
+                                <div class="subTitle">
+                                    <img src="" alt="">
+                                    <h4 class="subTitle__h">¿Que es?</h4>
+                                </div>
+                                <p class="paragraph">
+                                    Es la forma mas flexible en la que una persona puede interactuar con una computadora por medio de comandos entedibles para la maquina
+                                    <br><br>
+                                    En ocaciones es bueno personalizar las consola ya que nos puede brindar algunos indicativos como estado de repositorios de git, 
+                                    algunas de las consolas recomendadas son:
+                                    <br><br>
+                                    - En windows terminal - microsoft store <br>
+                                    - en mac y linux Hyper y se personalizar con zsh
+                                </p>
+                                <!-- #region Tabla-->
+                                <table class="table">
+                                    <caption>Lista de algunos comandos basicos para consola de mac y linux y de (WSL)</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Comando</th>
+                                            <th>Descripcion</th>
+                                            <th class="whit30">Ejemplo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>sudo</td>
+                                            <td>Permite ejecutar comandos con permisos de administrador.</td>
+                                            <td>sudo "comando"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pwd</td>
+                                            <td>El comando muestra la ruta actual.</td>
+                                            <td>pwd</td>
+                                        </tr>
+                                        <tr>
+                                            <td>cd</td>
+                                            <td>Me permite navegar entre directorios.</td>
+                                            <td>CD "ruta del directorio"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ls</td>
+                                            <td>Lista los documentos del directorio actual, se puede usar variaciones -r lista archivos de subdirectorio, -a muestra los archivos ocultos, -l me muestra el detalle de los archivos, -t ordena la lista por fecha.</td>
+                                            <td>ls <br> ls -a <br>ls -al <br>...</td>
+                                        </tr>
+                                        <tr>
+                                            <td>mkdir</td>
+                                            <td>Crea una nueva carpeta.</td>
+                                            <td>mkadir "nombre de la carpeta"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>touch</td>
+                                            <td>Crea un archivo.</td>
+                                            <td>touch "Nombre del archivo"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>rm</td>
+                                            <td>Elimina archivos para eliminar carpetas se usa la varion -rf.</td>
+                                            <td>rm "Nombre del archivo" <br> rm -rf "Nombre de carpeta"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>cat</td>
+                                            <td>Permite visualizar el contenido de un archivo de manera parcial</td>
+                                            <td>cat "Nombre del archivo"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>more</td>
+                                            <td>Permite visualizar el contenido de un archivo de manera mas detallada</td>
+                                            <td>more "Nombre del archivo"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>node</td>
+                                            <td>Permite modificar el contenido del archivo</td>
+                                            <td>node "Nombre del archivo"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>apt-get</td>
+                                            <td>Me permite darle instrucciones al gestor de paquetes de linux como actualiza o instalar programas.</td>
+                                            <td>sudo apt-get update <br>sudo apt-get upgrade</td>
+                                        </tr>
+                                        <tr>
+                                            <td>history</td>
+                                            <td>Muestra el historial de los comandos ejecutados en la consola por medio del sombolo "!" y el numero del comando se puede repetir el comando (!246).</td>
+                                            <td>history<br>!245</td>
+                                        </tr>
+                                        <tr>
+                                            <td>chown -R</td>
+                                            <td>Da permisos de modificacion a carpetas en windows subsystem for linux.</td>
+                                            <td>sudo chown -R "usuario" "ubicacion de la carpeta"</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- #endregion Tabla-->
+                            </div>
+                        </article>
+
+                        <!-- #endregion Consola-->
                     </div>
-                    
                 </div>
 
-            </div>
+            </section>
             <!-- #endregion PreWork-->
 
             <!-- #region  HTML-->
-            <div class="box" id="divHTML">
+            <section class="box" id="divHTML">
                 <div class="card">
                     <div class="card__page--c"></div>
                     <div class="cardContent">
@@ -103,11 +302,11 @@
 
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- #endregion HTML-->
 
             <!-- #region CSS-->
-            <div class="box" id="divCSS">
+            <section class="box" id="divCSS">
                 <div class="card">
                     <div class="card__page--d"></div>
                     <div class="cardContent">
@@ -117,7 +316,7 @@
 
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- #endregion CSS-->
 
             <div class="box" id="div">
@@ -169,8 +368,8 @@
                 </div>
             </div>
             
-        </section>
-    </main>
+        </main>
+    </div>
     <footer>
 
     </footer>

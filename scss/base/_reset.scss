@@ -18,7 +18,8 @@
     appearance: none;
 }
 body{
-    font-family: $PlexRegular + '-regular', sans-serif;  
+    font-family: $PlexRegular + '-regular', sans-serif;
+    overflow: hidden;
 }
 
 button,

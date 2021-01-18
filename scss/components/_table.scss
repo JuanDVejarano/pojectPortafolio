@@ -1,0 +1,45 @@
+.table{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+    caption{
+        @include defaultFont(1, $fz: $font-titulo - 4, $fw: medium, $ta: center);
+        width: 80%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    thead{
+        //background-color: ;
+        background: #36304a;
+        tr{
+            th{
+                @include defaultFont(1, $fw: medium);
+                padding: 10px;
+                border: 0px;
+                &:first-of-type{
+                    border-top-left-radius: 10px;
+                }
+                &:last-of-type{
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            background: #ededed;
+            td{
+                @include defaultFont(1, $c: $fontColorDark);
+                padding: 10px;
+            }
+            &:nth-child(even){
+                background-color: #dcdbdb;
+            }
+        }
+    }
+    .whit30{
+        width: 30%;
+    }
+}
